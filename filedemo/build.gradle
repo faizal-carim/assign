@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.10'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.fazial'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'com.h2database:h2:1.4.200'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'mysql:mysql-connector-java'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.xerial:sqlite-jdbc:3.35.0'
+	implementation 'com.squareup.okhttp3:okhttp:4.5.0'
+	implementation 'com.google.code.gson:gson:2.7'
+}
+
+test {
+	useJUnitPlatform()
+}
